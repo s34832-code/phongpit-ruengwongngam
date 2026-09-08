@@ -1,29 +1,174 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>หน้าแนะนำตัวของฉัน</title>
-<style>
-body {
-  background-color: #0000FF; color: #333;
-  text-align: center; padding: 50px;
-     }  
-.card {
-  background: white; border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  max-width: 500px; margin: 0 auto; padding: 30px;
-      }
-h1 { color: #2c3e50; }
-p { font-size: 18px; line-height: 1.6; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phongpit - Portfolio</title>
+    <!-- นำเข้าฟอนต์จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* กล่องโปรไฟล์สไตล์หรูหรา */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.3); /* ขอบสีทองจางๆ */
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            
+            /* แอนิเมชันตอนโหลด */
+            animation: fadeUp 1.2s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* หัวข้อ */
+        .profile-card h1 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37; /* สีทอง */
+            font-size: 28px;
+            margin-bottom: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        .profile-card h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        /* ข้อมูล */
+        .profile-card p {
+            font-size: 16px;
+            font-weight: 300;
+            color: #cccccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #D4AF37;
+            font-weight: 400;
+        }
+
+        /* ปุ่มกด */
+        .btn-portfolio {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: transparent;
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 16px;
+            border: 1px solid #D4AF37;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* เอฟเฟกต์ตอนเอาเมาส์ชี้ปุ่ม */
+        .btn-portfolio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #D4AF37;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-portfolio:hover::before {
+            width: 100%;
+        }
+
+        .btn-portfolio:hover {
+            color: #111; /* เปลี่ยนสีตัวอักษรเป็นดำตอนชี้ */
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); /* เรืองแสง */
+            transform: translateY(-3px); /* ขยับขึ้นนิดนึง */
+        }
+
+        /* ลูกเล่นวงกลมพื้นหลัง (ลอยไปมา) */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            animation: float 8s infinite alternate ease-in-out;
+        }
+        
+        .circle-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+        }
+        
+        .circle-2 {
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            right: -100px;
+            animation-delay: 2s;
+        }
+
+        /* คีย์เฟรมสำหรับแอนิเมชัน */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 40px); }
+        }
+    </style>
 </head>
 <body>
-<div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีครับ! ผมชื่อ <strong>พงค์พิชญ์ (Phongpit)</strong></p>
-<p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-<p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-<a href="portfolio.html" style="display:inline-block; background:#3498db; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;">👉 ดูแฟ้มสะสมงานของผม</a>
-</div>
+
+    <!-- แบล็คกราวด์กราฟิกลอยๆ -->
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <!-- ส่วนเนื้อหาหลัก -->
+    <div class="profile-card">
+        <h1>Welcome to My Profile</h1>
+        <h2>สวัสดีครับ! ผมชื่อพงค์พิชญ์</h2>
+        <p>ขณะนี้กำลังศึกษาและมีความหลงใหลในด้าน <br><span class="highlight">Computer Science & Engineering</span></p>
+        <p>ก้าวแรกของการสร้างสรรค์ผลงานเริ่มต้นที่นี่<br>บน GitHub Pages</p>
+        
+        <a href="portfolio.html" class="btn-portfolio">ดูแฟ้มสะสมผลงาน (Portfolio) ➔</a>
+    </div>
+
 </body>
 </html>
