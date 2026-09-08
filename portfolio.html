@@ -1,35 +1,237 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<img src="Top15.jpg" alt="รูปโปรไฟล์ของฉัน" width="200">
-<meta charset="UTF-8">
-<meta viewport="width=device-width, initial-scale=1.0">
-<title>แฟมสะสมงานของฉัน </title>
-<style>
-body { font-family: sans-serif; background-color: #f4f7f6; text-align: center;
-padding: 30px; }
-.container { max-width: 800px; margin: 0 auto; }
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-.btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - พงค์พิชญ์</title>
+    <!-- นำเข้าฟอนต์จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* ส่วนหัวและรูปโปรไฟล์ */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 20px auto;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #D4AF37;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .avatar-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.6);
+        }
+
+        .profile-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 32px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .profile-header p {
+            color: #aaaaaa;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        /* รายการผลงาน (Grid Layout) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* การ์ดผลงานสไตล์หรูหรา */
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #D4AF37;
+            opacity: 0.7;
+            transition: width 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .portfolio-card:hover::before {
+            width: 6px;
+            opacity: 1;
+        }
+
+        .card-number {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .portfolio-card h3 {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .portfolio-card p {
+            color: #cccccc;
+            font-size: 15px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ปุ่มกลับหน้าแรก */
+        .nav-footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 25px;
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            color: #D4AF37;
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateX(-5px);
+        }
+
+        /* Animation ตอนเข้าหน้า */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ปรับแต่งสำหรับหน้าจอสมาร์ทโฟน */
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1> แฟมสะสมงาน (Portfolio) ของ พงค์พิชญ์(phongpit)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
-<!-- กล่องผลงานชิ้นที่ 1 -->
-<div class="project-card">
-<h3>1. โครงงาน/ชนงานวิทยาศาสตร์คำนวณ  </h3>
-<p>รายละเอียดชิ้นงาน : เขียนอธิบายสั้นๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง </p>
-</div>
-<!-- กล่องผลงานชิ้นที่  2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชิ้นงาน  : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-</div>
-<!-- ปุ่มกดกลับหน้าแรก -->
+
+    <div class="container">
+        <!-- ส่วนหัวข้อและรูปถ่าย -->
+        <div class="profile-header">
+            <div class="avatar-wrapper">
+                <img src="Top15.jpg" alt="รูปโปรไฟล์ของฉัน" class="avatar-img">
+            </div>
+            <h1>แฟ้มสะสมผลงาน (Portfolio)</h1>
+            <p>พงค์พิชญ์ (Phongpit Ruengwongngam)</p>
+            <p style="font-size: 14px; color: #888888; margin-top: 5px;">พื้นที่รวบรวมผลงาน กิจกรรม และความภาคภูมิใจ</p>
+        </div>
+
+        <!-- รายการผลงาน/กิจกรรม -->
+        <div class="portfolio-grid">
+            
+            <!-- ผลงานชิ้นที่ 1 -->
+            <div class="portfolio-card">
+                <div class="card-number">Project 01</div>
+                <h3>1. โครงงาน / ชิ้นงานวิทยาศาสตร์คำนวณ</h3>
+                <p>รายละเอียดชิ้นงาน : เขียนอธิบายสั้นๆ ว่าทำอะไร เทคโนโลยีที่ใช้ และสิ่งที่ได้รับจากการพัฒนาโครงงานนี้</p>
+            </div>
+
+            <!-- ผลงานชิ้นที่ 2 -->
+            <div class="portfolio-card">
+                <div class="card-number">Activity 02</div>
+                <h3>2. กิจกรรม / เกียรติบัตรที่ได้รับ</h3>
+                <p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน และทักษะที่ได้รับการพัฒนาจากการเข้าร่วมกิจกรรม</p>
+            </div>
+
+        </div>
+
+        <!-- ปุ่มย้อนกลับ -->
+        <div class="nav-footer">
+            <a href="index.html" class="btn-back">⬅ กลับหน้าแรก</a>
+        </div>
+    </div>
+
+</body>
+</html>
 <a href="index.html" class="btn"> กลับหน้าแรก</a>
 </div>
 </body>
