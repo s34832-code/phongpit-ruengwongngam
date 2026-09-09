@@ -10,6 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
+        /* ปุ่มดูรายละเอียดเพิ่มเติมในการ์ด */
+        .btn-card-detail {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: transparent;
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 13px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            align-self: flex-start; /* จัดปุ่มให้อยู่ซ้ายมือ */
+        }
+
+        .btn-card-detail:hover {
+            background: #D4AF37;
+            color: #0d0d0d;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+            transform: translateX(3px);
+        }
         * {
             margin: 0;
             padding: 0;
@@ -296,6 +317,7 @@
                 <div class="card-number">Activity 02</div>
                 <h3>ผลงานอื่ๆ</h3>
                 <p>ผลการสอบโอเน็ตในปี2566 </p>
+                <a href="detail1.html" class="btn-card-detail">ดูภาพและรายละเอียดเพิ่มเติม ➔</a>
             </div>
 
         </div>
