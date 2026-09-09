@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับฉัน - พงค์พิชญ์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* ส่วนหัว */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .avatar-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #D4AF37;
+            padding: 4px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .profile-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .profile-header p {
+            color: #aaaaaa;
+            font-size: 15px;
+        }
+
+        /* กล่องเนื้อหาประวัติ */
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 25px;
+        }
+
+        .info-card h2 {
+            color: #D4AF37;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .info-card p, .info-card li {
+            color: #cccccc;
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-card ul li::before {
+            content: '✦';
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ปุ่มย้อนกลับ */
+        .nav-footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 25px;
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            color: #D4AF37;
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateX(-5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- รูปและชื่อส่วนตัว -->
+        <div class="profile-header">
+            <img src="Top15.jpg" alt="รูปโปรไฟล์" class="avatar-img">
+            <h1>เกี่ยวกับฉัน (About Me)</h1>
+            <p>นายพงค์พิชญ์ เรืองวงษ์งาม (Phongpit Ruengwongngam)</p>
+        </div>
+
+        <!-- ประวัติส่วนตัวและแรงบันดาลใจ -->
+        <div class="info-card">
+            <h2>ข้อมูลส่วนตัว & ความสนใจ</h2>
+            <p>
+                สวัสดีครับคณะอาจารย์และผู้ประเมินทุกท่าน ผมมีความสนใจอย่างยิ่งในสาขา <strong>Computer Science & Engineering</strong> มีความตั้งใจที่จะเรียนรู้เกี่ยวกับการพัฒนาซอฟต์แวร์ การแก้ปัญหาด้วยอัลกอริทึม และการประยุกต์ใช้เทคโนโลยีเพื่อสร้างสรรค์นวัตกรรมใหม่ๆ
+            </p>
+        </div>
+
+        <!-- ประวัติการศึกษา / ทักษะ -->
+        <div class="info-card">
+            <h2>ทักษะและความสามารถ (Skills & Interests)</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python, HTML, CSS, JavaScript (พื้นฐาน)</li>
+                <li><strong>Tools & Platforms:</strong> Git, GitHub Pages, VS Code</li>
+                <li><strong>Soft Skills:</strong> การคิดเชิงตรรกะ (Logical Thinking), การแก้ปัญหา และการแก้คณิตศาสตร์ขั้นสูง</li>
+            </ul>
+        </div>
+
+        <!-- ช่องทางติดต่อ -->
+        <div class="info-card">
+            <h2>ช่องทางการติดต่อ (Contact)</h2>
+            <p>📧 Email: phongpitr@email.com</p>
+            <p>🌐 GitHub: github.com/s34832-code</p>
+            <p>เบอร์โทรศัพท์: 0962155542</p>
+        </div>
+
+        <!-- ปุ่มกลับหน้าแรก -->
+        <div class="nav-footer">
+            <a href="index.html" class="btn-back">⬅ กลับหน้าหลัก</a>
+        </div>
+    </div>
+
+</body>
+</html>
