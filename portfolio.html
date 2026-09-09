@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - พงค์พิชญ์</title>
+    <title>Portfolio - พงค์พิชญ์ เรืองวงษ์งาม</title>
     <!-- นำเข้าฟอนต์จาก Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,23 +106,28 @@
         }
 
         /* กรอบใส่ภาพผลงาน */
+        /* ก๊อปปี้ไปวางทับ CSS สำหรับ .card-img-wrapper และ .card-img เดิม */
         .card-img-wrapper {
             width: 100%;
-            height: 200px;
+            /* ปรับความสูงเป็น auto เพื่อให้ความสูงขยายตามภาพ */
+            height: auto; 
             border-radius: 10px;
-            overflow: hidden;
+            overflow: visible; /* เปลี่ยนจาก hidden เพื่อไม่ให้ตัดภาพ */
             margin-bottom: 18px;
             border: 1px solid rgba(212, 175, 55, 0.2);
             position: relative;
+            /* เพิ่ม flex เพื่อให้จัดวางภาพตรงกลาง */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
         .card-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* ตัดภาพให้พอดีกล่องไม่เบี้ยว */
+            height: auto;
+            object-fit: contain; /* เปลี่ยนจาก cover เพื่อให้เห็นภาพเต็มๆ */
+            max-height: 400px; /* จำกัดความสูงสูงสุดเพื่อไม่ให้ภาพใหญ่เกินไป */
             transition: transform 0.5s ease;
         }
-
         /* เอาเมาส์ชี้การ์ดแล้วรูปขยายเบาๆ */
         .portfolio-card:hover .card-img {
             transform: scale(1.08);
@@ -215,69 +220,70 @@
         <div class="portfolio-grid">
              <div class="portfolio-card">
                 <div class="card-img-wrapper">
+                    <img src="J1.jpg" alt="คำอธิบายภาพ" class="card-img">
+                </div>
+                <div class="card-number">Project 03</div>
+                <h3>เกียรติบัตรคุณธรรม จริยธรรม 1</h3>
+                <p>เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน ประจำปีการศึกษา ๒๕๖๘" class="card-img</p>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-img-wrapper">
                     <img src="J2.jpg" alt="คำอธิบายภาพ" class="card-img">
                 </div>
                 <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-img-wrapper">
-                    <img src="J3.jpg" alt="คำอธิบายภาพ" class="card-img">
-                </div>
-                <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-img-wrapper">
-                    <img src="J4.jpg" alt="คำอธิบายภาพ" class="card-img">
-                </div>
-                <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-img-wrapper">
-                    <img src="J5.jpg" alt="คำอธิบายภาพ" class="card-img">
-                </div>
-                <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
-            </div>
-             <div class="portfolio-card">
-                <div class="card-img-wrapper">
-                    <img src="J6.jpg" alt="คำอธิบายภาพ" class="card-img">
-                </div>
-                <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
+                <h3>เกียรติบัตรคุณธรรม จริยธรรม 2</h3>
+                <p>เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน ประจำปีการศึกษา ๒๕๖๙</p>
             </div>
             <div class="portfolio-card">
                 <div class="card-img-wrapper">
                     <img src="J7.jpg" alt="คำอธิบายภาพ" class="card-img">
                 </div>
                 <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
+                <h3>เกียรติบัตรคุณธรรม จริยธรรม</h3>
+                <p>เป็นนักเรียนแกนนำเข้าร่วมอบรมผู้นำเยาวชนคนคุณธรรมโรงเรียนคุณธรรม สพฐ. ประจำปีการศึกษา ๒๕๖๘</p>
             </div>
             <div class="portfolio-card">
                 <div class="card-img-wrapper">
-                    <img src="J8.jpg" alt="คำอธิบายภาพ" class="card-img">
+                    <img src="J3.jpg" alt="คำอธิบายภาพ" class="card-img">
                 </div>
                 <div class="card-number">Project 03</div>
-                <h3>3. ชื่อผลงานถัดไป</h3>
-                <p>รายละเอียดผลงานถัดไป...</p>
+                <h3>เกียรติบัตรโอเพนเฮาส์</h3>
+                <p>PLC ขั้นพื้นฐาน [EE, Computing]</p>
             </div>
+            <div class="portfolio-card">
+                <div class="card-img-wrapper">
+                    <img src="J4.jpg" alt="คำอธิบายภาพ" class="card-img">
+                </div>
+                <div class="card-number">Project 03</div>
+                <h3>เกียรติบัตรโอเพนเฮาส์</h3>
+                <p>ปัญญาประดิษฐ์พื้นฐานร่วมกับข้อมูลด้านความมั่นคงปลอดภัยทางไซเบอร์ [EE, Computing]</p>
+            </div>
+             <div class="portfolio-card">
+                <div class="card-img-wrapper">
+                    <img src="J5.jpg" alt="คำอธิบายภาพ" class="card-img">
+                </div>
+                <div class="card-number">Project 03</div>
+                <h3>เกียรติบัตรโรงเรียน</h3>
+                <p>เข้าร่วมกิจกรรม "ค่ายยกระดับผลสัมฤทธิ์ทางการเรียนเทคโนโลยี"</p>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-img-wrapper">
+                    <img src="J6.jpg" alt="คำอธิบายภาพ" class="card-img">
+                </div>
+                <div class="card-number">Project 03</div>
+                <h3>เกียรติบัตรโรงเรียน</h3>
+                <p>เข้าร่วมโครงการ "ค่ายพัฒนานวัตกรรมและเทคโนโลยี"</p>
+            </div>
+    
             <!-- ผลงานชิ้นที่ 1 -->
             <div class="portfolio-card">
                 <div class="card-img-wrapper">
                     <!-- เปลี่ยนชื่อไฟล์รูปตรง src="ใส่ชื่อไฟล์รูปชิ้นงาน1.jpg" -->
-                    <img src="J1.jpg" alt="รูปโครงงานวิทยาศาสตร์คำนวณ" class="card-img">
+                    <img src="J8.jpg" alt="รูปโครงงานวิทยาศาสตร์คำนวณ" class="card-img">
                 </div>
                 <div class="card-number">Project 01</div>
-                <h3>1. โครงงาน / ชิ้นงานวิทยาศาสตร์คำนวณ</h3>
-                <p>รายละเอียดชิ้นงาน : เขียนอธิบายสั้นๆ ว่าทำอะไร เทคโนโลยีที่ใช้ และสิ่งที่ได้รับจากการพัฒนาโครงงานนี้</p>
+                <h3>เกียรติบัตรอื่นๆ</h3>
+                <p>เข้าร่วมการแข่งขันอัจฉริยภาพทางคณิตศาสตร์ ระดับมัธยมศึกษาตอนปลาย</p>
         
             </div>
 
@@ -285,11 +291,11 @@
             <div class="portfolio-card">
                 <div class="card-img-wrapper">
                     <!-- เปลี่ยนชื่อไฟล์รูปตรง src="ใส่ชื่อไฟล์รูปกิจกรรม2.jpg" -->
-                    <img src="JJ.jpg" alt="รูปเกียรติบัตรหรือกิจกรรม" class="card-img">
+                    <img src="JJ.jpg" alt="รูปเกียรติบัตรหรือกิจกรรม">
                 </div>
                 <div class="card-number">Activity 02</div>
-                <h3>2. กิจกรรม / เกียรติบัตรที่ได้รับ</h3>
-                <p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน และทักษะที่ได้รับการพัฒนาจากการเข้าร่วมกิจกรรม</p>
+                <h3>ผลงานอื่ๆ</h3>
+                <p>ผลการสอบโอเน็ตในปี2566 </p>
             </div>
 
         </div>
