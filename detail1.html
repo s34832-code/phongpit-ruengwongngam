@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดผลงาน - พงค์พิชญ์</title>
+    <!-- นำเข้าฟอนต์ Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* ปุ่มย้อนกลับด้านบน */
+        .btn-back-top {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-back-top:hover {
+            transform: translateX(-5px);
+        }
+
+        /* หัวข้อ */
+        .detail-header {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category-tag {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .detail-header h1 {
+            font-size: 28px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .detail-header .date {
+            color: #888888;
+            font-size: 14px;
+        }
+
+        /* ส่วนคำอธิบายเนื้อหา */
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 35px;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-section h2 {
+            font-size: 20px;
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            color: #cccccc;
+            line-height: 1.8;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        /* แกลเลอรีรูปภาพ */
+        .gallery-title {
+            font-size: 20px;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: contain;
+            display: block;
+            background: #000;
+        }
+
+        .img-caption {
+            padding: 12px;
+            font-size: 13px;
+            color: #aaaaaa;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ปุ่มย้อนกลับ -->
+        <a href="portfolio.html" class="btn-back-top">⬅ กลับหน้าแฟ้มสะสมผลงาน</a>
+
+        <!-- ส่วนหัวข้อผลงาน -->
+        <div class="detail-header">
+            <div class="category-tag">Project Detail</div>
+            <h1>1. โครงงาน / ชิ้นงานวิทยาศาสตร์คำนวณ</h1>
+            <div class="date">วันที่ทำกิจกรรม/ส่งมอบงาน: 2024</div>
+        </div>
+
+        <!-- ส่วนเนื้อหาและบทสรุป -->
+        <div class="content-section">
+            <h2>รายละเอียดและวัตถุประสงค์</h2>
+            <p>
+                พิมพ์อธิบายรายละเอียดของโครงงานเต็มๆ ที่นี่ครับ เช่น จุดประสงค์ของการทำโครงงาน ปัญหาที่ต้องการแก้ ภาษาหรือเทคโนโลยีที่ใช้ในการพัฒนา (เช่น Python, HTML/CSS, C++)
+            </p>
+            <p>
+                <strong>สิ่งที่เรียนรู้และทักษะที่ได้รับ:</strong> อธิบายความทักษะทางเทคนิค (Hard Skills) และทักษะการแก้ปัญหา (Soft Skills) ที่ได้เรียนรู้จากงานนี้ เพื่อให้อาจารย์เห็นถึงความตั้งใจและความสามารถของคุณครับ
+            </p>
+        </div>
+
+        <!-- ส่วนรูปภาพผลงาน / ภาพกิจกรรมหลายๆ รูป -->
+        <h2 class="gallery-title">ภาพประกอบผลงาน / กิจกรรม</h2>
+        <div class="gallery-grid">
+            
+            <!-- ภาพที่ 1 -->
+            <div class="gallery-item">
+                <img src="project_img1.jpg" alt="ภาพผลงาน 1" class="gallery-img">
+                <div class="img-caption">ภาพบรรยากาศการทำงาน / หน้าจอโปรแกรม</div>
+            </div>
+
+            <!-- ภาพที่ 2 -->
+            <div class="gallery-item">
+                <img src="project_img2.jpg" alt="ภาพผลงาน 2" class="gallery-img">
+                <div class="img-caption">รูปภาพเกียรติบัตร / การนำเสนอผลงาน</div>
+            </div>
+
+            <!-- ภาพที่ 3 (เพิ่มรูปได้เรื่อยๆ ตามต้องการ) -->
+            <div class="gallery-item">
+                <img src="project_img3.jpg" alt="ภาพผลงาน 3" class="gallery-img">
+                <div class="img-caption">ภาพถ่ายร่วมกับทีมหรืออาจารย์ที่ปรึกษา</div>
+            </div>
+
+        </div>
+
+        <!-- ปุ่มย้อนกลับล่างสุด -->
+        <div style="text-align: center; margin-bottom: 50px;">
+            <a href="portfolio.html" class="btn-back-top" style="font-size: 16px;">⬅ กลับหน้าแฟ้มสะสมผลงาน</a>
+        </div>
+    </div>
+
+</body>
+</html>
