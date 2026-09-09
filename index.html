@@ -16,7 +16,35 @@
             padding: 0;
             box-sizing: border-box;
         }
+        /* จัดกลุ่มปุ่มให้อยู่คู่กัน */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }        
+        
+        /* ปรับสไตล์ปุ่มรอง (เกี่ยวกับฉัน) */
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            transition: all 0.4s ease;
+        }
 
+        .btn-secondary:hover {
+            color: #D4AF37;
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
         body {
             font-family: 'Prompt', sans-serif;
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
@@ -166,8 +194,13 @@
         <h2>สวัสดีครับ! ผมชื่อนายพงค์พิชญ์ เรืองวงษ์งาม</h2>
         <p>ขณะนี้กำลังศึกษาและมีความหลงใหลในด้าน <br><span class="highlight">Computer Science & Engineering</span></p>
         <p>ก้าวแรกของการสร้างสรรค์ผลงานเริ่มต้นที่นี่<br>บน GitHub Pages</p>
-        
-        <a href="portfolio.html" class="btn-portfolio">ดูแฟ้มสะสมผลงาน (Portfolio) ➔</a>
+            <div class="button-group">
+                <!-- ปุ่มไปหน้าแนะนำตัวเอง -->
+                <a href="about.html" class="btn-secondary">👤 เกี่ยวกับฉัน (About Me)</a>
+    
+                <!-- ปุ่มไปหน้า Portfolio เดิม -->
+                <a href="portfolio.html" class="btn-portfolio">ดูแฟ้มสะสมผลงาน ➔</a>
+            </div>
     </div>
 
 </body>
